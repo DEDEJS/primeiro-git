@@ -1,0 +1,5 @@
+sistema de natação, insercao de competidores com seu nome idade 
+sistema de categoria por exemplo de 6 a 12 anos é categoria infantil
+de 13 a 18 categoria adolescente 
+acima de 18 categoria adulto
+o sistema deve retornar a categoria para cada competidor
