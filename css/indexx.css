@@ -1,0 +1,50 @@
+*{
+margin:0;
+padding:0;
+list-style:none;
+font-family:"sans-serif",arial,Helvetica !important;
+position:relative;
+}
+.logo{
+margin-top:2%;
+margin-left:40%;
+position:relative;	
+}
+.form{
+margin-top:-5%;
+width:50%;
+margin-left:20%;
+padding:8%; 
+
+}
+input {
+	margin-right:-7%;
+ border-radius: 4px;
+ display: inline-block;
+ padding:1%;
+ font-size:100%;
+ margin-top:2%;
+ margin-bottom:1%;
+ width:70%;
+}
+.nome_text{
+  margin-left:35%; 
+}
+.error_nome{
+	margin-left :5%;
+	/*color:red;*/
+}
+.idade_text{
+	margin-left: 35%;
+}
+.error_idade{
+    margin-left:5%; 
+   /* color:red;	*/
+}
+.submit{
+border-radius:5px;
+width:80%; 
+margin-left:8%;
+cursor:pointer;
+width:50%; 
+}

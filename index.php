@@ -1,75 +1,117 @@
 <?php
 ini_set('default_charset','UTF-8');
-
 session_start();
 //$categorias = array("","Infantil","Adolescente","Adulto");
      $categorias = array("","Infantil","Adolescente","Adulto");
-   
+     $errors_nome = array("Campo Nome Vázio","Campo Nome Inválido","Proibido Numeros E Caracteres Especiais");
+     $errors_idade = array("Campo Idade Vázio","Campo Idade Inválido","Somente Números No Campo Idade");
    if(isset($_POST['nome'])){$nome_input = $_POST['nome'];}else{$nome_input = false;}
     if(isset($_POST['idade'])){ $idade_input = $_POST['idade'];}else{$idade_input = false;}
+    
+    //if(isset($_POST['submit'])){$submit_input = $_POST['submit'];}else{$submit_input = false;}
+
 
 class form{
   private $categorias = array("Infantil");
   private $nome;
   private $nome_value;
+  
+  private $nome_true;
 
   private $idade;
   private $idade_value;
+
+  private $idade_true;
+
+  private $b;
      /**/
+  public function valida_inputs($nome_input,$idade_input,$categorias,$errors_nome,$errors_idade){
+  $nome = $this->nome = $nome_input;//valor do campo input nome
+  $idade = $this->idade = $idade_input;
+  $categorias = $this->categorias = $categorias;  
+
+  $errors_nome = $this->errors_nome = $errors_nome;
+  $errors_idade = $this->errors_idade = $errors_idade;
+      if(!isset($nome)){
+           $_SESSION['errors_nome'] = false;
+
+      }else if(!isset($idade)){
+         $_SESSION['errors_idade'] = false;
+      }else{
+      
+        if(strlen($nome)<=0){
+            $_SESSION['errors_nome'] = $errors_nome[0];
+            $_SESSION['valida_nome'] = false;
+            //echo $_SESSION['errors_idade'] = $errors_idade[0];
+        }else if(strlen($nome)>=21){
+             $_SESSION['errors_nome'] = $errors_nome[1];
+             $_SESSION['valida_nome'] = false;
+        }else if((preg_match('/\d+/', $nome)>0)){
+             $_SESSION['errors_nome'] = $errors_nome[2];
+             $_SESSION['valida_nome'] = false;
+        }else{
+
+          $_SESSION['errors_nome'] = "";
+          $_SESSION['valida_nome'] = true;
+          //$_SESSION['errors_idade'] = "";
+        }
+             /*campo idade*/
+               if(strlen($idade)<=0){
+             $_SESSION['errors_idade'] = $errors_idade[0];
+             $_SESSION['valida_idade'] = false;
+        }else if(strlen($idade)>=4){
+             $_SESSION['errors_idade'] = $errors_idade[1];
+             $_SESSION['valida_idade'] = false;
+        }else if(!is_numeric($idade)){
+             $_SESSION['errors_idade'] = $errors_idade[2];
+             $_SESSION['valida_idade'] = false;
+        }else{
+            $_SESSION['errors_idade'] = "";
+            $_SESSION['valida_idade'] = true;
+        }
+      }
+      /*cadastro no db*/
+      if(isset($_SESSION['valida_idade']) && isset($_SESSION['valida_nome'])){
+          if($_SESSION['valida_nome'] == true && $_SESSION['valida_idade'] == true){
+            echo "true";/*cadastrar*/
+            include_once("banco.php");
+            $sql = "INSERT INTO `git-1` (`nome`,`idade`,`categoria`) VALUES ('$nome_input','$idade_input','$categorias[1]')";
+             if(mysqli_query($conn,$sql)){
+            echo "cadastrado";
+     }else{
+      echo "falhou";
+    }
+
+          }else{
+            echo "false";
+          }
+      }
+  }
+
+public function error_nome($nome_input){
+  if(isset($_SESSION['errors_nome'])){
+  if($_SESSION['errors_nome'] != false){
+   echo $_SESSION['errors_nome'];
+  }else{
+    $_SESSION['errors_nome'] = "";
+  }
+  }
+}
+public function error_idade($idade_input){
+   if(isset($_SESSION['errors_idade'])){
+     if($_SESSION['errors_idade'] != false){ 
+      echo $_SESSION['errors_idade'];
+ }    else{
+  $_SESSION['errors_idade'] = "";
+ }
+}
+}
   function GetCategoria($categorias){
   	$categorias = $this->categorias = $categorias;
   	 //echo $categorias[2];
   }
- function GetNome($nome_input){
-    if(isset($_POST['nome'])){
-          $nome = $this->nome = $nome_input;
-          if(strlen($nome)<=0){
-          	$nome = false;
-            $_SESSION['nome_input'] = false;//session que preenche o campo input do html
-             echo "Preenche o Campo Nome";
-          }else if(strlen($nome)>=21){
-            $nome = false;
-            $_SESSION['nome_input'] = false;
-            echo "Campo Nome Inválido";
-          }else if(preg_match('/\d+/', $nome)>0){
-            $nome = false;
-            $_SESSION['nome_input'] = false;
-            echo "Proibido Numeros E Caracteres Especiais";
-          }else{
-            $_SESSION['nome_input'] = true;
-            echo "ok";
 
-          }
-         // echo $nome;
-    }else{
-    	
-    }
-  }
 
-  function GetIdade($idade_input){
-  	 if(isset($_POST['idade'])){
-         $idade = $this->idade = $idade_input;
-         if(strlen($idade)<=0){
-           $idade = false;
-           $_SESSION['idade_input'] = false; //session que preenche o campo input do html
-           echo "Preenche O Campo Idade";
-         }else if(strlen($idade)>=4){
-           $idade = false;
-           $_SESSION['idade_input'] = false;
-           echo "Campo Idade Inválido";
-         }else if(!is_numeric($idade)){
-           $idade = false;
-           $_SESSION['idade_input'] = false;
-           echo "Somente Números No Campo Idade";
-         }else{
-          echo $idade;
-          $_SESSION['idade_input'] = true;
-         }
-         //echo $idade;
-  	 }else{
-
-  	 }
-  }
     /*campo input value nome */
   function ValueNome($nome_input){
       if(isset($_POST['nome'])){
@@ -91,38 +133,16 @@ class form{
       }
     }
   }
+
   /*sistema de categoria*/
-   function Categoria($categorias,$nome,$idade){
-   	   if($nome == false){
-           
-   	   }else if($idade == false){
-
-   	   }else{
-   	    if($idade <=12){
-          echo "Bem vindo Competidor ". $nome." Você Pertence A Categoria ". $categorias[1];
-            /*$verifica = false*/
-            $_SESSION['categoria'] = $categorias[1];
-
-   	   }else if($idade >=13 && $idade <=18){
-          echo "Bem Vindo Competidor ".$nome." Você Pertence A Categoria ".$categorias[2];
-            $_SESSION['categoria'] = $categorias[2];
-   	   }else if($idade >=19){
-          echo "Bem Vindo Competidor ".$nome." Você Pertence A Categoria ".$categorias[3];
-   	      $_SESSION['categoria'] = $categorias[3];
-   	   }else{
-   	   	/*$verifica = true*/
-   	   }
-   }
+ 
 }
 
-}
      $form = new form();
-    
-     $form ->GetCategoria($categorias);
-     
+      $form ->valida_inputs($nome_input,$idade_input,$categorias,$errors_nome,$errors_idade);
     // $form ->GetIdade($idade_input);
 
- 	 $form ->categoria($categorias,$nome_input,$idade_input);
+ 	// $form ->CategoriaDb($categorias,$nome_input,$idade_input);
 
 ?>
 <!DOCTYPE HTML>
@@ -130,48 +150,44 @@ class form{
  <head>
  	<meta charset="UTF-8">
  	<title>Sistema De Natação</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/index.css"><!--responsivo-->
+  <link rel="stylesheet" type="text/css" href="css/indexx.css">
  </head>
  <body>
- 	<form action="#" method="POST" name="form">
-      <div >
-      	 <h3>Sistema De Natação</h3>
-      </div>
+  <div class="logo">
+         <h3 class="logoo">Sistema De Natação</h3>
+  </div>
+ 	<form action="#" method="POST" name="form" class="form">
      
-      <div>
+      <div class="nome_text">
       	 <p>Nome</p>
       </div>
-       <div>
+       <div class="error_nome">
       	<?php  
-          $form ->GetNome($nome_input);
+         $form ->error_nome($nome_input);
       	?>
       </div>
-      <div>
-         <input type="text" name="nome" placeholder="Nome" value="<?php $form ->ValueNome($nome_input); ?>">      	
+      <div class="input_nome">
+         <input type="text" name="nome" placeholder="Nome" value="<?php $form ->ValueNome($nome_input); ?>" class="nome_input">      	
       </div>
-      <div>
-      	<p>Idade</p>
+      <div class="idade_text">
+      	<p class="idade_textt">Idade</p>
       </div>
-       <div>
+       <div class="error_idade">
       	<?php  
-          $form ->GetIdade($idade_input);
+         $form ->error_idade($idade_input);
       	?>
       </div>
-      <div>
-      	 <input type="text" name="idade" placeholder="Idade" value="<?php $form ->ValueIdade($idade_input); ?>">
+      <div class="input_idade">
+      	 <input type="text" name="idade" placeholder="Idade" value="<?php $form->ValueIdade($idade_input); ?>" class="idade_input">
       </div>
-      <div>
-      	<input type="submit" name="">
+      <div class="submit">
+      	<input type="submit" value ="Iniciar" class="submitt" name="submit">
       </div>
  	</form>
   <?php 
-$a = "andre55";
-//(!preg_match('/^[a-z\d]{2,64}$/i', $_POST['user_name'])) preg_match('/^[A-Za-z0-9-]+$/', 'teste-1-2-3');
-if(preg_match('/\d+/', $_POST['nome'])>0){
-      echo "true ".$_POST['nome'];
- }else{
-  echo "false ".$_POST['nome'];
- }
- 
-  ?>
+ //   $form ->DbCadastra();
+  ?> 
  </body>
 </html>

@@ -1,0 +1,47 @@
+*{
+margin:0;
+padding:0;
+list-style:none;
+font-family:"sans-serif",arial,Helvetica !important;
+position:relative;
+}
+@media only screen and (min-width: 500px) {
+body{
+/*background-color:red;*/ 	
+}
+.logoo{
+margin-top:1%;
+margin-left:-5%;
+position:relative;	
+}
+.form{
+margin-top:1%; 
+}
+.error_nome{
+margin-top:2%; 	
+}
+.nome_input{
+	width:80%;
+	padding:2%; 
+}
+.idade_textt{
+margin-top:5%; 	
+}
+.error_idade{
+margin-top: 2%;
+}
+.idade_input{
+	width:80%;
+	padding:2%;  
+}
+.submit{
+	position:relative;
+	margin-top: 3%;
+	margin-right:50%; 
+	width:100%; 
+}
+.submitt{
+width:100%;
+cursor:pointer; 
+}
+}
