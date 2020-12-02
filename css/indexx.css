@@ -46,5 +46,15 @@ border-radius:5px;
 width:80%; 
 margin-left:8%;
 cursor:pointer;
-width:50%; 
+width:100%; 
+}
+.submitt{
+	width:70%; 
+	padding:2%; 
+}
+.submitt:hover{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
 }

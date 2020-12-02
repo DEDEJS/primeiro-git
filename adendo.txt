@@ -1,5 +1,8 @@
-sistema de natação, insercao de competidores com seu nome idade 
-sistema de categoria por exemplo de 6 a 12 anos é categoria infantil
-de 13 a 18 categoria adolescente 
-acima de 18 categoria adulto
-o sistema deve retornar a categoria para cada competidor
+Sistema de natação!
+1- Com Cadastro de Competidores Separados Por Categorias.
+2- O Sistema De Cadastro Deve Conter O Nome, Email,Senha E Idade.;
+3- Login Com O Email E Senha
+4- Pagina do Usuário Logado Deve Conter O Nome E A Categoria Do Competidor
+5- Página De Admin
+6- A Página De Admin Deve Conter Todos Os Competidores Com Opção De Adicionar, Alterar E Excluir.  
+ 

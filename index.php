@@ -1,15 +1,13 @@
 <?php
 ini_set('default_charset','UTF-8');
 session_start();
-//$categorias = array("","Infantil","Adolescente","Adulto");
-     $categorias = array("","Infantil","Adolescente","Adulto");
-     $errors_nome = array("Campo Nome Vázio","Campo Nome Inválido","Proibido Numeros E Caracteres Especiais");
-     $errors_idade = array("Campo Idade Vázio","Campo Idade Inválido","Somente Números No Campo Idade");
+     $categorias = array("","Infantil","Adolescente","Adulto"); // array que define a categoria
+     $errors_nome = array("Campo Nome Vázio","Campo Nome Inválido","Proibido Numeros E Caracteres Especiais");//array de mensagem de erro 
+     $errors_idade = array("Campo Idade Vázio","Campo Idade Inválido","Somente Números No Campo Idade");// array de mensagem de erro
    if(isset($_POST['nome'])){$nome_input = $_POST['nome'];}else{$nome_input = false;}
     if(isset($_POST['idade'])){ $idade_input = $_POST['idade'];}else{$idade_input = false;}
     
     //if(isset($_POST['submit'])){$submit_input = $_POST['submit'];}else{$submit_input = false;}
-
 
 class form{
   private $categorias = array("Infantil");
@@ -30,8 +28,8 @@ class form{
   $idade = $this->idade = $idade_input;
   $categorias = $this->categorias = $categorias;  
 
-  $errors_nome = $this->errors_nome = $errors_nome;
-  $errors_idade = $this->errors_idade = $errors_idade;
+  $errors_nome = $this->errors_nome = $errors_nome;//array com os erros do campo nome
+  $errors_idade = $this->errors_idade = $errors_idade;//array comos erros do campo nome
       if(!isset($nome)){
            $_SESSION['errors_nome'] = false;
 
@@ -83,7 +81,9 @@ class form{
     }
 
           }else{
-            echo "false";
+            
+            unset($_SESSION['valida_nome']);
+            unset($_SESSION['valida_idade']);
           }
       }
   }
@@ -116,17 +116,19 @@ public function error_idade($idade_input){
   function ValueNome($nome_input){
       if(isset($_POST['nome'])){
           $nome_value = $this->nome_value = $nome_input;
-         if($_SESSION['nome_input'] == false){
+         if($nome_input == false){
            $nome_value = "";
          }else{
-          echo $nome_value;
+          echo $nome_value; 
          }
+      }else{
+
       }
   }
   function ValueIdade($idade_input){
     if(isset($_POST['idade'])){
         $idade_value = $this->idade_value = $idade_input;
-        if($_SESSION['idade_input'] == false){
+        if($idade_input == false){
           $idade_value = "";
         }else{
         echo $idade_value;
@@ -140,9 +142,7 @@ public function error_idade($idade_input){
 
      $form = new form();
       $form ->valida_inputs($nome_input,$idade_input,$categorias,$errors_nome,$errors_idade);
-    // $form ->GetIdade($idade_input);
-
- 	// $form ->CategoriaDb($categorias,$nome_input,$idade_input);
+   
 
 ?>
 <!DOCTYPE HTML>
@@ -161,7 +161,7 @@ public function error_idade($idade_input){
  	<form action="#" method="POST" name="form" class="form">
      
       <div class="nome_text">
-      	 <p>Nome</p>
+      	 <p class="nome_textt">Nome</p>
       </div>
        <div class="error_nome">
       	<?php  
@@ -183,7 +183,7 @@ public function error_idade($idade_input){
       	 <input type="text" name="idade" placeholder="Idade" value="<?php $form->ValueIdade($idade_input); ?>" class="idade_input">
       </div>
       <div class="submit">
-      	<input type="submit" value ="Iniciar" class="submitt" name="submit">
+      	<input type="submit" value ="Cadastrar" class="submitt" name="submit">
       </div>
  	</form>
   <?php 
