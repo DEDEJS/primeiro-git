@@ -30,16 +30,48 @@ input {
 .nome_text{
   margin-left:35%; 
 }
+
 .error_nome{
 	margin-left :5%;
-	/*color:red;*/
+	color:red;
 }
+
 .idade_text{
 	margin-left: 35%;
 }
 .error_idade{
     margin-left:5%; 
-   /* color:red;	*/
+    color:red;
+}
+.email_text{
+	margin-left:35%; 
+}
+.error_email{
+	color: red;
+}
+.senha_text{
+	margin-left:35%; 
+}
+.error_senha{
+	color:red;
+}
+.estado_text{
+	margin-left:35%; 
+}
+.error_estado{
+	color:red;
+}
+.cidade_text{
+	margin-left:35%; 
+}
+.error_cidade{
+	color:red;
+}
+.telefone_text{
+	margin-left:35%; 
+}
+.error_telefone{
+	color:red;
 }
 .submit{
 border-radius:5px;
@@ -50,11 +82,11 @@ width:100%;
 }
 .submitt{
 	width:70%; 
-	padding:2%; 
+	padding:2%;
 }
 .submitt:hover{
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
 	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-	background-color:#dfdfdf;
+	background-color:#dfdfdf;cursor:pointer;
 }

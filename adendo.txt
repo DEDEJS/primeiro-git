@@ -1,8 +1,13 @@
 Sistema de natação!
+  PHP Version 7.4.8
+  Apache/2.4.43 (Win64)
+  mysqlnd 7.4.8
+
 1- Com Cadastro de Competidores Separados Por Categorias.
-2- O Sistema De Cadastro Deve Conter O Nome, Email,Senha E Idade.;
+2- O Sistema De Cadastro Deve Conter O  Email,Senha,Nome,Estado,Cidade E Telefone.;
 3- Login Com O Email E Senha
-4- Pagina do Usuário Logado Deve Conter O Nome E A Categoria Do Competidor
-5- Página De Admin
-6- A Página De Admin Deve Conter Todos Os Competidores Com Opção De Adicionar, Alterar E Excluir.  
+4- Pagina do Usuário Logado Deve Conter Um Campo Para O Usuário Preencher Os Dados Restantes Da Competição.
+5- Os Dados Restantes São. Idade,Quanto Tempo Treina.
+6- Página De Admin
+7- A Página De Admin Deve Conter Todos Os Competidores Com Opção De Adicionar, Alterar E Excluir.  
  

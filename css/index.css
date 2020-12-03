@@ -11,7 +11,26 @@ position:relative;
 margin-top:1%;
 margin-left:-8%;  
 }
-
+.email_input{
+	width:80%;
+	padding:2%; 
+}
+.senha_input{
+	width:80%;
+	padding:2%; 
+}
+.estado_input{
+	width:80%;
+	padding:2%;
+}
+.cidade_input{
+	width:80%;
+	padding:2%; 
+}
+.telefone_input{
+	width:80%;
+	padding:2%;  
+}
 .nome_textt{
 position:relative;
 margin-left:-50%; 
@@ -19,9 +38,10 @@ margin-left:-50%;
 .error_nome{
 	color: red;
 }
+
 .nome_input{
-	width:100%;
-	padding:3%; 
+	width:80%;
+	padding:2%;
 }
 .idade_textt{
 position:relative;
@@ -47,13 +67,35 @@ position:relative;
 .form{
 margin-top:1%; 
 }
+.email_input{
+	width:100%;
+	padding:2%;  
+}
+.senha_input{
+width:100%;
+	padding:2%; 
+}
+.nome_input{
+	width:100%;
+	padding:2%; 
+}
+.estado_input{
+	width:100%;
+	padding:2%; 
+}
+.cidade_input{
+	width:100%;
+	padding:2%;  
+}
+.telefone_input{
+width:100%;
+	padding:2%;   
+}
+
 .error_nome{
 margin-top:2%; 	
 }
-.nome_input{
-	width:80%;
-	padding:2%; 
-}
+
 .idade_textt{
 margin-top:5%; 	
 }
@@ -75,11 +117,39 @@ width:100%;
 cursor:pointer; 
 }
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 800px) {
 
 .logoo{
 margin-top:1%;
-margin-left:-2%;
+margin-left:7%;
 position: relative;  
+}
+.email_input{
+	width:80%;
+	padding:1%;  
+}
+.senha_input{
+width:80%;
+	padding:1%;
+}
+.nome_input{
+width:80%;
+	padding:1%; 
+}
+.estado_input{
+width:80%;
+	padding:1%;
+}
+.cidade_input{
+	width:80%;
+	padding:1%;
+}
+.telefone_input{
+width:80%;
+	padding:1%;   
+}
+.submitt{
+width:80%;
+cursor:pointer; 
 }
 }
