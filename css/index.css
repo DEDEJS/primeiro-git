@@ -7,9 +7,15 @@ position:relative;
 }
 @media only screen and (min-width: 320px) {
 
+.logo{
+}
+.logoo-login{
+	margin-top:1%;
+	margin-left:8%; 
+}
 .logoo{
 margin-top:1%;
-margin-left:-8%;  
+margin-left:1%;  
 }
 .email_input{
 	width:80%;
@@ -54,42 +60,21 @@ margin-left:-50%;
 	width:100%;
 	padding:3%;  
 }
-.submit{
-	margin-top:2%; 
+.submitt{
+	margin-top:3%;
+	margin-left:9%;  
 }
+
 }
 @media only screen and (min-width: 500px) {
+
 .logoo{
 margin-top:1%;
-margin-left:-8%;
+margin-left:5%;
 position:relative;	
 }
 .form{
 margin-top:1%; 
-}
-.email_input{
-	width:100%;
-	padding:2%;  
-}
-.senha_input{
-width:100%;
-	padding:2%; 
-}
-.nome_input{
-	width:100%;
-	padding:2%; 
-}
-.estado_input{
-	width:100%;
-	padding:2%; 
-}
-.cidade_input{
-	width:100%;
-	padding:2%;  
-}
-.telefone_input{
-width:100%;
-	padding:2%;   
 }
 
 .error_nome{
@@ -109,12 +94,14 @@ margin-top: 2%;
 .submit{
 	position:relative;
 	margin-top: 3%;
-	margin-right:50%; 
+	margin-right:50%;
+	width:20%; 
 
 }
 .submitt{
-width:100%;
-cursor:pointer; 
+width:20%;
+cursor:pointer;
+margin-left:2%; 
 }
 }
 @media only screen and (min-width: 800px) {
@@ -148,8 +135,15 @@ width:80%;
 width:80%;
 	padding:1%;   
 }
+.submit{
+	position:relative;
+	margin-top: 2%;
+	margin-left:5%;
+	max-width:100%; 	
+}
 .submitt{
-width:80%;
+width:90%;
 cursor:pointer; 
+margin-left:5%; 
 }
 }

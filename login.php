@@ -1,6 +1,7 @@
 <?php
 session_start();
 ini_set('default_charset','UTF-8');
+//include_once("classe/");
 if(isset($_POST['email'])){$email_input = $_POST['email'];}else{$email_input = false;}
 if(isset($_POST['senha'])){$senha_input = $_POST['senha'];}else{$senha_input = false;}
 $errors_email = array("Campo Email Vázio.","Campo Email Muito Grande.","Campo Email Inválido.");
@@ -90,7 +91,7 @@ $login ->ValidaLogin($email_input,$senha_input,$errors_email,$errors_senha);
 </head>
 <body>
  <div class="logo">
- 	 <h3 class="logoo">Login</h3>
+ 	 <h3 class="logoo-login">Login</h3>
  </div>
  <form action="#" method="POST" name="form" class="form" >
  	<div class="email_text">
@@ -120,6 +121,9 @@ $login ->ValidaLogin($email_input,$senha_input,$errors_email,$errors_senha);
  	<div class="submit">
  		<input type="submit" name="submit" class="submitt" value="Logar">
  	</div>
+  <div class="cadastrar">
+    <p>Não Tem Cadastro? <a href="cadastro.php">Cadastrar</a></p>
+  </div>
  </form>
 </body>
 </html>

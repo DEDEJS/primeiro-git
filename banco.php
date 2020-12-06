@@ -10,9 +10,13 @@ ini_set('default_charset','UTF-8');
 }catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-   
+      /*  $sql = "INSERT INTO `git-1` (`nome`,`idade`,`categoria`) VALUES ('$nome_input','$idade_input','$categorias[1]')";
+             if(mysqli_query($conn,$sql)){
+            echo "e";
+     }else{
+      echo "b";
+     }*/
 
-*/
 $conn = mysqli_connect("127.0.0.1", "root", "root", "git");
 
 ?>

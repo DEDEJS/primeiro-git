@@ -1,0 +1,1 @@
+CREATE TABLE `git`.`git-3` ( `id` INT(10) NOT NULL AUTO_INCREMENT , `email` varchar(30) NOT NULL , `senha` varchar(50) NOT NULL , `nome` varchar(20) NOT NULL , `estado` varchar(30) NOT NULL , `cidade` varchar(30) NOT NULL , `telefone` varchar(20) NOT NULL , `categoria` varchar(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
