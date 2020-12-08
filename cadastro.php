@@ -39,7 +39,7 @@ include_once("classe/valida_cadastro.php");
     	<?php $erros ->erro_senha_cadastro($senha_cadastro); ?>
     </div>
     <div class="input_senha">
-    	<input type="password" name="senha_cadastro" placeholder="Senha" class="senha_input" value="asasasass">
+    	<input type="password" name="senha_cadastro" placeholder="Senha" class="senha_input" >
     </div>
     <div class="nome_text"> 
     	<p>Nome</p>

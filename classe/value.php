@@ -2,7 +2,9 @@
 if(isset($_POST['email_cadastro'])){$email_cadastro = $_POST['email_cadastro'];}else{$email_cadastro = false;}
 if(isset($_POST['nome_cadastro'])){$nome_cadastro = $_POST['nome_cadastro'];}else{$nome_cadastro = false;}
 if(isset($_POST['telefone_cadastro'])){$telefone_cadastro = $_POST['telefone_cadastro'];}else{$telefone_cadastro = false;}
+
 if(isset($_SESSION['session_email'])){$session_email = $_SESSION['session_email'];}else{$session_email = false;}
+
 if(isset($_SESSION['session_nome'])){$session_nome = $_SESSION['session_nome'];}else{$session_nome = false;}
 if(isset($_SESSION['session_telefone'])){$session_telefone = $_SESSION['session_telefone'];}else{$session_telefone = false;}
 class value{

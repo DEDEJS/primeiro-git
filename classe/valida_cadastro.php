@@ -56,7 +56,7 @@ class FormCadastro{
              $email_cadastro_valida = false;
              $_SESSION['session_email'] = "";
          }else{
-            $_SESSION['email_cadastro'] = "ok";
+            $_SESSION['email_cadastro'] = "";
             $email_cadastro_valida = true;
             $_SESSION['session_email'] = $email_cadastro;
          }
@@ -74,7 +74,7 @@ class FormCadastro{
             $_SESSION['senha_cadastro'] = $errors_senha_cadastro[2];
             $senha_cadastro_valida = false;
           }else{
-            $_SESSION['senha_cadastro'] = "ok";
+            $_SESSION['senha_cadastro'] = "";
             $senha_cadastro_valida = true;
           }
       } if(!isset($nome_cadastro)){
@@ -102,7 +102,7 @@ class FormCadastro{
             $nome_cadastro_valida = false;
             $_SESSION['session_nome'] = false;
            }else{
-            $_SESSION['nome_cadastro'] = "ok";
+            $_SESSION['nome_cadastro'] = "";
            $nome_cadastro_valida = true;
            $_SESSION['session_nome'] = $nome_cadastro;
            }
@@ -126,24 +126,25 @@ class FormCadastro{
            //$_SESSION['session_telefone'] = false;
            $_SESSION['session_telefone'] = $telefone_cadastro;
            }else{
-            $_SESSION['telefone_cadastro'] = "ok";
+            $_SESSION['telefone_cadastro'] = "";
             $telefone_cadastro_valida = true;
             $_SESSION['session_telefone'] = $telefone_cadastro;
            }
         }
 
         if($email_cadastro_valida == false){
-           echo "1";
+          // echo "1";
         }else if($senha_cadastro_valida == false){
-           echo "2";
+          // echo "2";
         }else if($nome_cadastro_valida == false){
-           echo "3";
+         //  echo "3";
         }else if($telefone_cadastro_valida == false){
-          echo '4';
+          //echo '4';
         }else{
           echo "tudo bem";
           include_once("./banco.php");
-          $sql = "INSERT INTO `git-1` (`email`,`senha`,`nome`,`telefone`,`categoria`) VALUES ('$email_cadastro','$senha_cadastro','$nome_cadastro','$telefone_cadastro','--')";
+          $senha_cadastro = sha1($senha_cadastro);
+          $sql = "INSERT INTO `git` (`email`,`senha`,`nome`,`telefone`,`categoria`) VALUES ('$email_cadastro','$senha_cadastro','$nome_cadastro','$telefone_cadastro','--')";
              if(mysqli_query($conn,$sql)){
                     echo "cadastrou";
              }else{
