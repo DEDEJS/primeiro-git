@@ -1,21 +1,15 @@
-*{
-margin:0;
-padding:0;
-list-style:none;
-font-family:"sans-serif",arial,Helvetica !important;
-position:relative;
-}
+
 @media only screen and (min-width: 320px) {
 
 .logo{
+
+	right:7%; 
 }
 .logoo-login{
-	margin-top:1%;
-	margin-left:8%; 
+
 }
 .logoo{
-margin-top:1%;
-margin-left:1%;  
+
 }
 .email_input{
 	width:80%;
@@ -24,6 +18,13 @@ margin-left:1%;
 .senha_input{
 	width:80%;
 	padding:2%; 
+}
+.senha_text_2{
+	right:7%; 
+  	
+}
+.senhaP{
+   left:8%;
 }
 .estado_input{
 	width:80%;
@@ -66,12 +67,26 @@ margin-left:-50%;
 }
 
 }
+@media only screen and (min-width: 400px){
+.logoo-login{
+margin-left:15%;
+color:red;
+}	
+	
+}
 @media only screen and (min-width: 500px) {
 
 .logoo{
 margin-top:1%;
 margin-left:5%;
 position:relative;	
+}
+.logoo-login{
+margin-left:15%;
+color:pink;
+}.cadastroo-cadastro{
+margin-left:5%;
+color:red; 
 }
 .form{
 margin-top:1%; 
@@ -80,7 +95,10 @@ margin-top:1%;
 .error_nome{
 margin-top:2%; 	
 }
-
+.senhaP{
+   left:8%;
+   color:blue;
+}
 .idade_textt{
 margin-top:5%; 	
 }
@@ -94,7 +112,7 @@ margin-top: 2%;
 .submit{
 	position:relative;
 	margin-top: 3%;
-	margin-right:50%;
+	margin-right:40%;
 	width:20%; 
 
 }
@@ -103,6 +121,38 @@ width:20%;
 cursor:pointer;
 margin-left:2%; 
 }
+}
+@media only screen and (min-width:550px){
+.logoo-login{
+margin-left:15%;
+color:blue;
+}	
+.cadastroo-cadastro{
+margin-left:7%; 
+color:blue;
+}	
+.submitt{
+margin-left:11%;
+
+}
+}
+@media only screen and (min-width: 600px) {
+.logoo-login{
+margin-left:15%;
+color:red;
+}
+
+}
+@media only screen and (min-width: 650px) {
+.logoo-login{
+margin-left:15%;
+}
+
+.senhaP{
+	color:yellow;
+	left:8%;
+}
+
 }
 @media only screen and (min-width: 800px) {
 
@@ -123,6 +173,7 @@ width:80%;
 width:80%;
 	padding:1%; 
 }
+
 .estado_input{
 width:80%;
 	padding:1%;
@@ -135,6 +186,10 @@ width:80%;
 width:80%;
 	padding:1%;   
 }
+.senhaP{
+	left:8%;
+   color:black;
+}
 .submit{
 	position:relative;
 	margin-top: 2%;
@@ -146,4 +201,19 @@ width:90%;
 cursor:pointer; 
 margin-left:5%; 
 }
+}
+@media only screen and (min-width: 850px) {
+.senhaP{
+	left:8%;
+   color:red;
+}
+}
+@media only screen and (min-width: 850px) {
+.senha_text_2{
+	right:4%;
+}
+.senhaP{
+  left:6%;
+}
+
 }

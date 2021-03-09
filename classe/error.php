@@ -4,6 +4,8 @@ include_once("value.php");
 
 if(isset($_POST['email_cadastro'])){$email_cadastro = $_POST['email_cadastro'];}else{$email_cadastro = false;}
 if(isset($_POST['senha_cadastro'])){$senha_cadastro = $_POST['senha_cadastro'];}else{$senha_cadastro = false;}
+if(isset($_POST['senha_cadastro_repete'])){$senha_cadastro_repete = $_POST['senha_cadastro_repete'];}else{$senha_cadastro_repete = false;}
+
 if(isset($_POST['nome_cadastro'])){$nome_cadastro = $_POST['nome_cadastro'];}else{$nome_cadastro = false;}
 
 if(isset($_POST['telefone_cadastro'])){$telefone_cadastro = $_POST['telefone_cadastro'];}else{$telefone_cadastro = false;}
@@ -20,7 +22,6 @@ class erros{
           echo  $_SESSION['email_cadastro'] = "";
            }
         }
-        return true;
     }
      public function erro_senha_cadastro($senha_cadastro){
         if(isset($_SESSION['senha_cadastro'])){
@@ -31,6 +32,15 @@ class erros{
            }
         }
     } 
+    public function erro_senha_cadastro_repete($senha_cadastro_repete){
+       if(isset($_SESSION['senha_cadastro_repete'])){
+             if($_SESSION['senha_cadastro_repete'] != false){ 
+                  echo $_SESSION['senha_cadastro_repete'];
+             }else{
+              echo $_SESSION['senha_cadastro_repete'] = "";
+             }
+       } 
+    }
 
         public function erro_nome_cadastro($nome_cadastro){
         if(isset($_SESSION['nome_cadastro'])){

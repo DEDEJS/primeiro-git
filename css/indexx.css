@@ -1,9 +1,7 @@
 *{
-margin:0;
-padding:0;
-list-style:none;
-font-family:"sans-serif",arial,Helvetica !important;
-position:relative;
+border:none;	
+    outline: 0;
+
 }
 .logo{
 margin-top:2%;
@@ -18,8 +16,10 @@ padding:8%;
 
 }
 input {
+    
 	margin-right:-7%;
- border-radius: 4px;
+	border: 2px solid black;
+ border-radius: 10px;
  display: inline-block;
  padding:1%;
  font-size:100%;
@@ -27,12 +27,14 @@ input {
  margin-bottom:1%;
  width:50%;
 }
+
+
 .nome_text{
   margin-left:35%; 
 }
 
 .error_nome{
-	margin-left :5%;
+	margin-left :0%;
 	color:red;
 }
 
@@ -55,6 +57,14 @@ input {
 .error_senha{
 	color:red;
 }
+.senha_text_2{
+	margin-left:35%;
+}
+
+.error_senha_2{
+	color:red;
+}
+
 .estado_text{
 	margin-left:35%; 
 }
@@ -83,10 +93,22 @@ width:100%;
 .submitt{
 	width:50%; 
 	padding:2%;
+	background-color:#ADD8E6;
+	font-family:"Gill Sans", sans-serif	 !important; 
 }
 .submitt:hover{
+	cursor:pointer;
+	background:-webkit-gradient(linear,left,top,bottom,color-stop(0.5, #87CEEB), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+    background-color:#87CEEB;
+    text-align:center;
+    color:#fff;
+  }
+
+/*.submitt:hover{
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
 	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
 	background-color:#dfdfdf;cursor:pointer;
-}
+}*/

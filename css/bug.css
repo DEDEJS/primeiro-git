@@ -1,0 +1,49 @@
+*{
+margin:0;
+padding:0;
+list-style:none;
+font-family:"sans-serif",arial,Helvetica !important;
+position:relative;
+
+}
+.BugForm{
+margin-top:2%;
+margin-left:40%;
+position:relative;		
+}
+select{
+margin-right:-7%;
+ border-radius: 4px;
+ display: inline-block;
+ padding:1%;
+ font-size:100%;
+ margin-top:2%;
+ margin-bottom:1%;
+ width:30%;	
+ cursor:pointer;
+}
+option{
+	cursor:pointer;
+}
+.assunto{
+	margin-right:-7%;
+ border-radius: 4px;
+ display: inline-block;
+ padding:5%;
+ font-size:100%;
+ margin-top:2%;
+ margin-bottom:1%;
+ width:30%;
+ text-align:top; 
+}
+.SubmittBug{
+margin-top:2%; 	
+}
+.SubmitBug{
+border-radius:5px;
+padding:12px;
+margin-left:0%;
+cursor:pointer;
+width:30%; 
+margin-top:2%; 
+}

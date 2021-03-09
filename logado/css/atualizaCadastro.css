@@ -1,0 +1,35 @@
+.alterarDados{
+	margin-top:2%;
+	margin-left:30%;
+	background-color:#A9A9A9;
+	width:50%;
+	padding:2%;  
+}
+.altera_email, .alterar_nome, .alterar_telefone, .alterar_categoria{
+	background-color:white;
+	padding:2%;  
+	margin-top:1%; 
+}
+.altera_email:hover{background-color: red;}
+.alterar_nome:hover{background-color:red;}
+.alterar_telefone:hover{background-color:red;}
+.alterar_categoria:hover{background-color:red; }
+.alterarDados h4{
+	position:absolute;
+    margin-top:-1.5%; 
+	margin-left:11%;  
+}
+.alterarDados p{
+	position:absolute;
+	margin-top:-2%;
+	margin-left:25%; 
+	background-color:#D3D3D3;
+	width:10%;
+	padding:0.5%;
+	text-align:center; 
+	border-radius:25px; 
+}
+.alterarDados p:hover{
+	background-color:#836FFF;
+	cursor:pointer; 
+}
